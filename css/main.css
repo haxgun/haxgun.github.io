@@ -1,37 +1,41 @@
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body {
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+    Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji,
+    segoe ui symbol;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100%;
+  text-rendering: optimizeSpeed;
   margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-header {
-  padding: 10% 100px;
-  height: 60vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+section {
+  max-height: 100vh;
   max-width: 1440px;
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
 }
 
 .content {
-  width: 100%;
+  max-height: 100vh;
   height: 100%;
+  padding: 0 100px;
   margin: auto;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  gap: 5%;
+}
+
+.hello {
+  font-size: 32px;
 }
 
 .emoji {
@@ -48,34 +52,50 @@ header {
 .waving_hand {
   margin: 2px 10px;
   background-image: url("../img/waving_hand.png");
+}
 
-  &:hover {
-    animation-name: tada;
-    animation-duration: 2s;
-  }
+.waving_hand:hover {
+  animation-name: tada;
+  animation-duration: 2s;
 }
 
 .sometext {
   font-size: 40px;
   line-height: 60px;
   font-weight: 500;
-  padding: 50px 0;
-  & a {
-    padding: 0 5px;
+}
+
+@media (max-width: 553px) {
+  .sometext {
+    font-size: 35px;
+    line-height: 50px;
   }
+}
+
+@media (max-width: 470px) {
+  .sometext {
+    font-size: 30px;
+    line-height: 45px;
+  }
+}
+
+.sometext a {
+  padding: 0 5px;
 }
 
 .contact {
   display: inline;
   font-weight: 500;
   font-size: 20px;
-  & a {
-    padding: 5px;
-  }
-  &:hover .envelope {
-    animation-name: tada;
-    animation-duration: 2s;
-  }
+}
+
+.contact a {
+  padding: 5px;
+}
+
+.contact:hover .envelope {
+  animation-name: tada;
+  animation-duration: 2s;
 }
 
 .envelope {
@@ -86,10 +106,10 @@ header {
 
 .social {
   font-size: 30px;
-  margin-top: 5%;
-  & i {
-    padding: 0 20px 0 0;
-  }
+}
+
+.social i {
+  padding: 0 20px 0 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -100,34 +120,34 @@ header {
 
   a {
     color: #000;
-
   }
 
   .sometext a {
     box-shadow: inset 0 -3px 0 0 #000;
     transition: color 0.2s, box-shadow 0.2s;
-    &:hover {
-      color: #fff;
-      box-shadow: inset 0 -45px 0 0 #000;
-    }
+  }
+
+  .sometext a:hover {
+    color: #fff;
+    box-shadow: inset 0 -45px 0 0 #000;
   }
 
   .contact a {
     transition: color 0.2s, box-shadow 0.2s;
     box-shadow: inset 0 -2px 0 0 #000;
-
-    &:hover {
-      color: #fff;
-      box-shadow: inset 0 -32px 0 0 #000;
-    }
   }
 
-  .social  a {
-    transition: color 0.2s;
+  .contact a:hover {
+    color: #fff;
+    box-shadow: inset 0 -32px 0 0 #000;
+  }
 
-    &:hover {
-        color: #464b53;
-    }
+  .social a {
+    transition: color 0.2s;
+  }
+
+  .social a:hover {
+    color: #464b53;
   }
 }
 
@@ -145,10 +165,11 @@ header {
     box-shadow: inset 0 -3px 0 0 #fff;
     transition: color 0.2s, box-shadow 0.2s;
     padding: 0 5px;
-    &:hover {
-      color: #16171b;
-      box-shadow: inset 0 -45px 0 0 #fff;
-    }
+  }
+
+  .sometext a:hover {
+    color: #16171b;
+    box-shadow: inset 0 -45px 0 0 #fff;
   }
 
   .contact {
@@ -159,19 +180,19 @@ header {
     color: #dddddd;
     transition: color 0.2s, box-shadow 0.2s;
     box-shadow: inset 0 -2px 0 0 #fff;
+  }
 
-    &:hover {
-      color: #16171b;
-      box-shadow: inset 0 -32px 0 0 #fff;
-    }
+  .contact a:hover {
+    color: #16171b;
+    box-shadow: inset 0 -32px 0 0 #fff;
   }
 
   .social a {
-      color: #fff;
-      transition: color 0.2s;
-
-      &:hover {
-        color: #c7c7c7;
-      }
-    }
+    color: #fff;
+    transition: color 0.2s;
   }
+
+  .social a:hover {
+    color: #c7c7c7;
+  }
+}
